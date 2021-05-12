@@ -1,9 +1,10 @@
 insert into carna_user(
-    username, email, password, profile_picture)
+    is_admin, username, email, password, profile_picture)
     values(
+        ${is_admin},
         ${username},
         ${email},
         ${hash},
         ${profile_picture}
     )
-returning user_id, username, email, profile_picture;
+returning *;

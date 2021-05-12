@@ -14,7 +14,13 @@ create table teacher();
 create table admin();
 
 create table reports(reports_id serial primary key,
-user_id int references carna_user(user_id), );
+user_id int references carna_user(id), );
 
 create table questions(question_id serial primary key,
 );
+
+create table onboarding(id serial primary key, 
+user_id int references carna_user(id),
+question varchar(1000),
+answer varchar(1000),
+response varchar references answer);

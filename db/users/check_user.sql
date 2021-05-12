@@ -1,0 +1,1 @@
+select * from carna_user where email = ${email};

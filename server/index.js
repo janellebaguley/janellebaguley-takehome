@@ -28,7 +28,7 @@ massive({
 app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.get('/api/logout', authCtrl.logout)
-app.put('/api/user/:id', authCtrl.updateUsername)
+// app.put('/api/user/:id', authCtrl.updateUsername)
 
 
 app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`));

@@ -7,20 +7,13 @@ email varchar(150),
 password varchar(50), 
 profile_picture text);
 
-create table student();
-
-create table teacher();
-
-create table admin();
-
-create table reports(reports_id serial primary key,
-user_id int references carna_user(user_id), );
-
-create table questions(question_id serial primary key,
+create table if not exists course (
+    course_id serial primary key,
+    course_name varchar(30) not null
 );
 
-create table onboarding(id serial primary key, 
-user_id int references carna_user(id),
-question varchar(1000),
-answer varchar(1000),
-response varchar references answer);
+create table if not exists user_course_join (
+    join_id serial primary key,
+    user_id int references carna_user(user_id),
+    course_id int references course(course_id)
+);

@@ -1,0 +1,19 @@
+.project-flex {
+    box-sizing: border-box;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-links {
+    height: 70px;
+    width: 70px;
+    background: #894FC7;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}

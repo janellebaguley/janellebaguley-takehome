@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express'),
       authCtrl = require('./controllers/authController'),
+      courseCtrl = require('./controllers/courseController'),
       massive = require('massive'),
       session = require('express-session')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
@@ -28,7 +29,10 @@ massive({
 app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.get('/api/logout', authCtrl.logout)
-// app.put('/api/user/:id', authCtrl.updateUsername)
+
+//Course endpoints
+app.get('/api/courses/:id', courseCtrl.getCourses)
+app.post('/api/course/:id', courseCtrl.createCourse)
 
 
 app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`));
